@@ -1,15 +1,20 @@
 # Cloud Run 調整建議
 
 1. Java 升級
+
 2. SpringBoot 升級 & 套件增加
     - sleuth
 
 3. 增加 DB 版控 liquibase
+
 4. 增加 [Google Cloud's operations suite](https://cloud.google.com/products/operations)
     - trace
     - secretmanager
     - metrics
     - logging
+      - 增加 src/main/resources/logback-spring.xml
+      - 使用 profile gcp
+
 5. 使用 buildpack
 
 ## Cloud Native Buildpacks
@@ -139,7 +144,7 @@ gcloud run deploy $SERVICE_NAME \
 
   --set-env-vars="^@^spring.config.location=classpath:,file:/config/" \
 
-  
+
 curl -o cloud_sql_proxy https://dl.google.com/cloudsql/cloud_sql_proxy.darwin.amd64
 chmod +x cloud_sql_proxy
 ./cloud_sql_proxy -instances=das-ct-lab:asia-east1:sam-tset-0824=tcp:5432
