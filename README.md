@@ -94,7 +94,7 @@ export INSTANCE_CONNECTION_NAME=test-cloud-run-0324-1:asia-east1:quickstart-inst
 export DB_DATABASE_NAME=testdb
 export DB_USERNAME=dbuser
 export SECRET_CONFIG_NAME=config-gcp
-export SECRET_CONFIG_PATH=/workspace/config//application-gcp.yml
+export SECRET_CONFIG_PATH=/workspace/config/application-gcp.yml
 
 gcloud run deploy $SERVICE_NAME \
   --quiet \

@@ -7,8 +7,8 @@ spring:
   cloud:
     gcp:
       sql:
-        instance-connection-name: das-ct-lab:asia-east1:sam-tset-0824
-        database-name: devdb
+        instance-connection-name: ${sql_instance_connection_name}
+        database-name: ${sql_database_name}
   # redis:
   #   host: 127.0.0.1
   #   port: 6378
