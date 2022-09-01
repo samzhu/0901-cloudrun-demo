@@ -5,17 +5,17 @@
 2. SpringBoot 升級 & 套件增加
     - sleuth
 
-3. 增加 DB 版控 liquibase
-
-4. 增加 [Google Cloud's operations suite](https://cloud.google.com/products/operations)
-    - trace
+3. 增加 [Google Cloud's operations suite](https://cloud.google.com/products/operations)
     - secretmanager
+    - trace
     - metrics
     - logging
       - 增加 src/main/resources/logback-spring.xml
       - 使用 profile gcp
 
-5. 使用 buildpack
+4. 使用 buildpack
+
+5. 增加 DB 版控 liquibase
 
 ## Cloud Native Buildpacks
 
