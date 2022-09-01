@@ -1,0 +1,58 @@
+spring:
+  autoconfigure:
+    exclude:
+    - org.springframework.boot.actuate.autoconfigure.metrics.export.stackdriver.StackdriverMetricsExportAutoConfiguration
+  r2dbc:
+    username: user1
+    password: pw123456
+  jpa:
+    show-sql: true
+  main:
+    banner-mode: console
+  cloud:
+    gcp:
+      core:
+        enabled: false
+      sql:
+        enabled: true
+        instance-connection-name: das-ct-lab:asia-east1:sam-tset-0824
+        database-name: devdb
+      metrics:
+        enabled: false
+      trace:
+        enabled: false
+      logging:
+        enabled: false
+  # redis:
+  #   host: 127.0.0.1
+  #   port: 6378
+  #   password: pw123456
+  # cache:
+  #   redis:
+  #     time-to-live: 600000 # Configure default TTL, e.g., 10 minutes
+  liquibase:
+    enabled: true
+    url: jdbc:postgresql://127.0.0.1:5432/devdb?currentSchema=public
+    user: user1
+    password: pw123456
+
+
+logging:
+  level:
+    root: info
+    com.example.demo: debug
+    com.zaxxer.hikari.pool.HikariPool: debug
+    org.springframework.data.r2dbc: debug
+
+management:
+  server:
+    port: 8080
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    git:
+      mode: full
+
+

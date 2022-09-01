@@ -1,0 +1,36 @@
+databaseChangeLog:
+- changeSet:
+    id: 1661924881417-1
+    author: samzhu (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: delivery_company_pk
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR
+        - column:
+            name: label
+            type: VARCHAR
+        - column:
+            defaultValueNumeric: -1
+            name: level
+            type: INTEGER
+        tableName: delivery_company
+- changeSet:
+    id: 1661924881417-2
+    author: samzhu (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: name
+        constraintName: delivery_company_un
+        tableName: delivery_company

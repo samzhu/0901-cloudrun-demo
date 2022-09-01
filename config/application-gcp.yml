@@ -1,0 +1,25 @@
+spring:
+  r2dbc:
+    username: ${db_username}
+    password: ${sm://db_password}
+  main:
+    banner-mode: off
+  cloud:
+    gcp:
+      sql:
+        instance-connection-name: das-ct-lab:asia-east1:sam-tset-0824
+        database-name: devdb
+  # redis:
+  #   host: 127.0.0.1
+  #   port: 6378
+  #   password: pw123456
+  # cache:
+  #   redis:
+  #     time-to-live: 600000 # Configure default TTL, e.g., 10 minutes
+  liquibase:
+    enabled: false
+
+logging:
+  level:
+    root: info
+    com.example.demo: info
